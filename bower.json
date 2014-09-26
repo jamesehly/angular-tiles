@@ -1,0 +1,23 @@
+{
+  "name": "angular-tiles",
+  "version": "0.0.1",
+  "main": "./release/angular-tiles.js",
+  "dependencies": {
+    "angular": ">= 1.0.8"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "component.json",
+    "package.json",
+    "lib",
+    "config",
+    "sample",
+    "test",
+    "tests",
+    "ngdoc_assets",
+    "Gruntfile.js",
+    "files.js"
+  ]
+}

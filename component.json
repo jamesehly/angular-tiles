@@ -1,0 +1,22 @@
+{
+  "name": "angular-tiles",
+  "version": "0.0.1",
+  "description": "Window Tile Manager for AngularJS",
+  "keywords": [
+    "angular",
+    "tile",
+    "tiles"
+  ],
+  "main": "release/angular-tiles.min.js",
+  "typescript": {
+    "definition": "api/angular-ui-router.d.ts"
+  },
+  "scripts": [
+    "release/angular-tiles.min.js"
+  ],
+  "files": [
+    "api/angular-ui-router.d.ts"
+  ],
+  "license": "MIT",
+  "repo": "jamesehly/angular-tiles"
+}
