@@ -7,6 +7,7 @@ angular.module("angular-tiles", []);
 
 var $angularTileDirective = function() { 
     return {
+        restrict: 'AE',
         scope: {
             panelHeight: "@",
             panelOverflow: "@",
@@ -36,7 +37,7 @@ var $angularTileDirective = function() {
             }
             if (scope.panelStretch === "horizontal") {
                 element[0].style.cssFloat = "left";
-            }
+            } 
 
             scope.$watch("panelClose", function() {
                 element.attr("panel-hidden", scope.panelClose);
@@ -51,6 +52,7 @@ var $angularTileDirective = function() {
 
 var $angularTileContainerDirective = function() {
     return {
+        restrict: 'AE',
         scope: {
             panelFullscreen: "@"
         },
