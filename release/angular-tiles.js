@@ -1,6 +1,6 @@
 /**
  * Window Tile Manager for AngularJS
- * @version v0.0.1
+ * @version v0.0.2
  * @link http://jamesehly.com/
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
@@ -20,6 +20,7 @@ angular.module("angular-tiles", []);
 
 var $angularTileDirective = function() { 
     return {
+        restrict: 'AE',
         scope: {
             panelHeight: "@",
             panelOverflow: "@",
@@ -49,7 +50,7 @@ var $angularTileDirective = function() {
             }
             if (scope.panelStretch === "horizontal") {
                 element[0].style.cssFloat = "left";
-            }
+            } 
 
             scope.$watch("panelClose", function() {
                 element.attr("panel-hidden", scope.panelClose);
@@ -64,6 +65,7 @@ var $angularTileDirective = function() {
 
 var $angularTileContainerDirective = function() {
     return {
+        restrict: 'AE',
         scope: {
             panelFullscreen: "@"
         },
