@@ -1,48 +1,151 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
 <html lang="en" ng-app="myAngularTileApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Angular Tiles - The Tile Manager for AngularJS</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
         <link href="css/bootstrap.min.css" rel="stylesheet">
-
+        <link href="css/docs.css" rel="stylesheet">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-
-        
-
     </head>
     <body>
 
-    <at-container>
-        <at-tile>
-            Hello
-        </at-tile>
-        <at-tile>
-            World
-        </at-tile>
-    </at-container>
+        <div class="menu-sample">
+            <div class="row">
+                <div class="col-xs-2 text-left"><a href="#"><i class="glyphicon glyphicon-chevron-left"></i></a></div>
+                <div class="col-xs-8 text-center"><a href="">Apps Menu</a>
+                    <ul class="hide">
+                        <li>Welcome App</li>
+                        <li>Mobile App</li>
+                        <li>GIS App</li>
+                    </ul>
+                </div>
+                <div class="col-xs-2 text-right"><a href="#"><i class="glyphicon glyphicon-chevron-right"></i></a></div>
+            </div>
+        </div>
+
+        <div ui-view>
+            <at-container>
+                <at-tile id="main-tile" tile-overflow="auto">
+                    <div class="leaderboard">
+                        <h1>Angular Tiles</h1>
+                        <p class="lead text-center">The Window Tile Manager for AngularJS</p>
+                    </div>
 
 
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="../lib/angular-1.2.14/angular.js"></script>
-    <script src="../lib/angular-1.2.14/angular-animate.js"></script>
-    <script src="../release/angular-tiles.js"></script>
-    
-    <script type="text/javascript">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <div class="devices">
+                                    <div class="desktop"></div>
+                                    <div class="tablet-landscape"></div>
+                                    <div class="phone"></div>
+                                </div>
+
+                                <p class="welcome">Angular Tiles provides a system to easily create tiling layouts with AngularJS
+                                    using custom tags and element attributes.</p> 
+
+                                <h2 class="heading-section">Getting Started</h2>
+
+                                <p>
+
+                                <section id="section-basictemplate">
+                                    <h2 class="heading-section">Basic Template</h2>
+                                    <div class="row">
+                                        <div class="col-sm-7">
+                                            <pre><code class="html">&lt;!-- Start with an at-container (setting tile-fullscreen=&quot;false&quot; forces the container to be it's parents dimensions) --&gt;
+&lt;at-container tile-fullscreen=&quot;false&quot;&gt;
+    &lt;!-- then nest any number of at-tile elements --&gt;
+    &lt;at-tile tile-height=&quot;40px&quot;&gt;
+        &lt;div class=&quot;header&quot;&gt;
+            &lt;h3&gt;Angular Tiles&lt;/h3&gt;
+        &lt;/div&gt;
+    &lt;/at-tile&gt;
+    &lt;!-- at-tile elements must be direct children of an at-container or at-tile --&gt; 
+    &lt;at-tile tile-overflow=&quot;auto&quot;&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            ...
+            Lorem Ipsum Content Here
+            ...
+        &lt;/div&gt;
+    &lt;/at-tile&gt;
+    &lt;at-tile tile-height=&quot;40px&quot;&gt;
+        &lt;div class=&quot;footer&quot;&gt;
+            &lt;ul class=&quot;nav nav-pills nav-justified&quot;&gt;
+                &lt;li&gt;&lt;i class=&quot;glyphicon glyphicon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+                &lt;li&gt;MENU&lt;/li&gt;
+                &lt;li&gt;&lt;i class=&quot;glyphicon glyphicon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/at-tile&gt;
+&lt;/at-container&gt;</code></pre>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="phone">
+                                                <!-- Start with an at-container (setting tile-fullscreen="false" forces the container to be it's parents dimensions) -->
+                                                <at-container tile-fullscreen="false">
+                                                    <!-- then nest any number of at-tile elements -->
+                                                    <at-tile tile-height="40px">
+                                                        <div class="header">
+                                                            <h3>Angular Tiles</h3>
+                                                        </div>
+                                                    </at-tile>
+                                                    <!-- at-tile elements must be direct children of an at-container or at-tile --> 
+                                                    <at-tile tile-overflow="auto">
+                                                        <div class="content">
+                                                            <!-- start slipsum code -->
+                                                            <p class="lead text-center">You see? It's curious. Ted did figure it out - time travel.</p>
+                                                            <p>And when we get back, we gonna tell everyone. How it's possible, how it's done, what the dangers are. But then why fifty years in the future when the spacecraft encounters a black hole does the computer call it an 'unknown entry event'? Why don't they know? If they don't know, that means we never told anyone. And if we never told anyone it means we never made it back. Hence we die down here. Just as a matter of deductive logic. </p>
+                                                            <p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb. </p>
+                                                            <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass. </p>
+                                                            <!-- please do not remove this line -->
+                                                            <div style="display:none;"><a href="http://slipsum.com">lorem ipsum</a></div>
+                                                            <!-- end slipsum code -->
+                                                        </div>
+                                                    </at-tile>
+                                                    <at-tile tile-height="40px">
+                                                        <div class="footer">
+                                                            <ul class="nav nav-pills nav-justified">
+                                                                <li><i class="glyphicon glyphicon-chevron-left"></i></li>
+                                                                <li>MENU</li>
+                                                                <li><i class="glyphicon glyphicon-chevron-right"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </at-tile>
+                                                </at-container>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
+                                <h2 class="heading-section">Tile Layout</h2>
+                            </div>
+                        </div>
+                    </div>
+                </at-tile>
+
+            </at-container>
+        </div>
+
+
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="../lib/angular-1.2.14/angular.js"></script>
+        <script src="../lib/angular-1.2.14/angular-animate.js"></script>
+        <script src="../build/angular-tiles.js"></script>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/zenburn.min.css">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script type="text/javascript">
             angular.module("myAngularTileApp", ["angular-tiles"]);
         </script>
-</body>
+    </body>
 </html>

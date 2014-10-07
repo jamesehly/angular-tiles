@@ -1,0 +1,171 @@
+// Variables
+// ---------------------------------------
+@leaderboard-bgcolor: #535657;
+
+// 
+// Elements
+// ---------------------------------------
+html, body {
+    height:100%;
+    width:100%;
+    font-family: 'Lato', sans-serif;
+    background-color:lighten(@leaderboard-bgcolor, 61%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight:300;
+}
+
+p {
+    font-size:14px;
+}
+
+pre {
+    padding:0;
+    border:0;
+    
+    
+    code {
+        padding: 15px!important;
+        overflow:auto!important;
+        width:1000px;
+    }
+    
+}
+
+//
+// Classes in Ubiquity
+// ---------------------------------------
+.heading-section {
+    border-bottom:1px solid #ddd;
+    padding-bottom:15px;
+    margin-bottom:40px;
+}
+
+//
+// Bootstrap Overrides
+// ---------------------------------------
+.container-fluid {
+    max-width:960px;
+}
+
+// 
+// Main Menu
+// ---------------------------------------
+.menu-sample {
+    position:absolute;
+    left:0px;
+    top:-40px;
+    width:100%;
+    background:#000;
+    color:#FFF;
+    padding:15px;
+
+    ul {
+        margin:0;
+        padding:0;
+
+        li {
+            list-style:none;
+            margin:0;
+            padding:10px 30px;
+            border-bottom:1px solid #ddd;
+        }
+    }
+}
+
+//
+// Header Leaderboard
+// ---------------------------------------
+.leaderboard {
+    background-color:@leaderboard-bgcolor;
+    color:#FFF;
+    min-height:400px;
+    padding:60px 0 50px;
+
+    h1 {
+        font-size:100px;
+        text-transform:uppercase;
+        text-align:center;
+        color:#FFF;
+        font-weight:200;
+        margin-top:40px;
+        text-shadow:0 2px 1px #333;
+    }
+
+    .lead {
+        font-weight:300;
+        text-shadow:0 2px 1px #333;
+    }
+}
+
+p.welcome {
+    font-size:24px;
+    text-align: center;
+    margin-top:50px;
+    font-weight:300;
+    color:#555;
+    padding:50px 0;
+}
+
+//
+// Devices illustration
+// ---------------------------------------
+.devices {
+    position:absolute;
+    top:-100px;
+    width:100%;
+    
+    .tablet-landscape {
+        background-color:lighten(@leaderboard-bgcolor, 50%);
+        width: unit(1024 / 8, px);
+        height: unit(768 / 8, px);
+        position:absolute;
+        top:30px;
+        left:50%;
+        margin-left: unit((1920 / 8) / 2 - ((1920 / 8) / 4) - 50, px);
+    }
+    .desktop {
+        background-color:lighten(@leaderboard-bgcolor, 30%);
+        width: unit(1920 / 8, px);
+        height: unit(1080 / 8, px);
+        position:absolute;
+        left:50%;
+        margin-left: unit(-((1920 / 8) / 2) - ((1920 / 8) / 4), px);
+    }
+    .phone {
+        background-color:lighten(@leaderboard-bgcolor, 15%);;
+        width: unit(320 / 8, px);
+        height: unit(480 / 8, px);
+        position:absolute;
+        top:60px;
+        left:50%;
+        margin-left: unit((1920 / 8) / 2 - ((1920 / 8) / 4) - 70, px);
+    }
+}
+
+//
+// Basic Template Section
+// ---------------------------------------
+#section-basictemplate {
+    .phone {
+        height:480px;
+        width:100%;
+        background-color:#FFF;
+        
+        .header, .footer {
+            color:#FFF;
+            text-align:center;
+            background-color:#333;
+            line-height:40px;
+            min-height:40px;
+            h3 {
+                margin:0;
+                line-height:40px;
+            }
+        }
+        .content {
+            padding:20px;
+        }
+    }
+}

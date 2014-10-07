@@ -104,4 +104,4 @@ function caught(fn) {
 // Utils for test from core angular
 var noop = angular.noop,
     toJson = angular.toJson;
-beforeEach(module('ui.router.compat'));
+beforeEach(module('angular-tiles'));

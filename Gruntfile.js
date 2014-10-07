@@ -121,8 +121,8 @@ module.exports = function (grunt) {
       options: {
         dest: 'site',
         html5Mode: false,
-        title: 'UI Router',
-        startPage: '/api/ui.router',
+        title: 'Angular Tiles',
+        startPage: '/api/angular-tiles',
         navTemplate: 'ngdoc_assets/docnav.html'
       },
       api: {

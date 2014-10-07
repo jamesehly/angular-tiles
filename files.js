@@ -1,4 +1,4 @@
-routerFiles = {
+var files = {
   src: [
     'src/tiles.js',
     'src/tileManager.js',
@@ -18,5 +18,5 @@ routerFiles = {
 };
 
 if (exports) {
-  exports.files = routerFiles;
+  exports.files = files;
 }
