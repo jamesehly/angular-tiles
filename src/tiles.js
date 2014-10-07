@@ -5,14 +5,14 @@
 
 angular.module("angular-tiles", []);
 
-var $angularTileDirective = function() { 
+var $angularTileDirective = function() {
     return {
         restrict: 'AE',
         scope: {
             tileHeight: "@",
             tileOverflow: "@",
             tileStretch: "@",
-            tileWidth: "@",  
+            tileWidth: "@",
             tilelHidden: "@",
             tilelClose: "="
 
@@ -39,7 +39,7 @@ var $angularTileDirective = function() {
             }
             if (scope.tileStretch === "horizontal") {
                 element[0].style.cssFloat = "left";
-            } 
+            }
 
             scope.$watch("tileClose", function() {
                 element.attr("tile-hidden", scope.tileClose);
@@ -53,8 +53,13 @@ var $angularTileDirective = function() {
 };
 
 var $angularTileContainerDirective = {};
-$angularTileContainerDirective.$inject = ["$window", "$timeout"];
-var $angularTileContainerDirective = function($window, $timeout) {
+$angularTileContainerDirective.$inject = ["$window"];
+var $angularTileContainerDirective = function($window) {
+
+    var resize = function() {
+
+    }
+
     return {
         restrict: 'AE',
         scope: {
@@ -63,6 +68,8 @@ var $angularTileContainerDirective = function($window, $timeout) {
         link: function(scope, element) {
             var tileManager = new TileManager(element);
             var windowElement = $($window);
+            var timer = null, longtimer = null;
+
             if (scope.tileFullscreen === "false") {
                 windowElement = element.parent();
             }
@@ -70,19 +77,26 @@ var $angularTileContainerDirective = function($window, $timeout) {
             element.width(windowElement.width());
             element[0].style.overflow = "hidden";
             element[0].style.display = "block";
-            
-            // De-bouncing this using $timeout and resize event
+
+            // De-bouncing this using setTimout
             $($window).on("resize", function() {
-                if (!tileManager.resizing) {
-                    tileManager.resizing = true;
-                    $timeout(function() {
-                        element.height(windowElement.height());
-                        element.width(windowElement.width());
-                        tileManager.redrawChildTiles(element);
-                    }, 100);
-                }
+                clearInterval(timer);
+                // this timer is for visual feedback
+                timer = setTimeout(function() {
+                    element.height(windowElement.height());
+                    element.width(windowElement.width());
+                    tileManager.redrawChildTiles(element);
+                }, 100);
+                // this timer is for cleanup
+                clearInterval(longtimer);
+                longtimer = setTimeout(function() {
+                    element.height(windowElement.height());
+                    element.width(windowElement.width());
+                    tileManager.redrawChildTiles(element);
+                }, 1000);
             });
             $($window).resize();
+
         }
     };
 };

@@ -16,7 +16,7 @@ TileManager.prototype.getTileChildren = function(element) {
     this.tileChildren = element.children("at-tile, [at-tile]");
     if (this.tileChildren.length > 0) {
         return true;
-    }
+    } 
     return false; 
 };
 TileManager.prototype.setCurrentTile = function(element) {
@@ -44,7 +44,7 @@ TileManager.prototype.loadTileData = function() {
 };
 TileManager.prototype.setTotalVariableTileHeight = function() {
     for (var n in this.tileHeights) {
-        if (this.tileHeights[n] == "100%") {
+        if (this.tileHeights[n].indexOf("%") > 0) {
             this.totalVerticalVariableTiles += 1;
         } else {
             this.totalVariableTileHeight -= parseInt(this.tileHeights[n]);
@@ -54,7 +54,7 @@ TileManager.prototype.setTotalVariableTileHeight = function() {
 };
 TileManager.prototype.setTotalVariableTileWidth = function() {
     for (var n in this.tileWidths) {
-        if (this.tileWidths[n] == "100%") {
+        if (this.tileWidths[n].indexOf("%") > 0) {
             this.totalHorizontalVariableTiles += 1;
         } else {
             this.totalVariableTileWidth -= parseInt(this.tileWidths[n]);
